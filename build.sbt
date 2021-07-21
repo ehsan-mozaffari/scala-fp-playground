@@ -1,4 +1,4 @@
-name := "scala-fp-playground2"
+name := "scala-fp-playground"
 
 version := "0.1"
 
