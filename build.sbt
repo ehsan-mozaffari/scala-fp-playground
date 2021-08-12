@@ -8,3 +8,10 @@ scalafmtOnCompile := true
 
 lazy val root = (project in file("."))
   .settings(libraryDependencies ++= Dependencies.mainDependencies)
+
+scalacOptions ++= Seq(
+  "-feature",
+  "-deprecation",
+  "-unchecked",
+  "-language:postfixOps"
+)

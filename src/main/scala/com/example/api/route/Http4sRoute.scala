@@ -1,11 +1,12 @@
-package com.example
+package com.example.api.route
 
 import cats.effect.Sync
 import cats.implicits._
+import com.example.api.domain.{HelloWorld, Jokes}
 import org.http4s.HttpRoutes
 import org.http4s.dsl.Http4sDsl
 
-object Http4sRoutes {
+object Http4sRoute {
 
   def jokeRoutes[F[_]: Sync](J: Jokes[F]): HttpRoutes[F] = {
     val dsl = new Http4sDsl[F] {}
@@ -24,7 +25,7 @@ object Http4sRoutes {
     HttpRoutes.of[F] { case GET -> Root / "hello" / name =>
       for {
         greeting <- H.hello(HelloWorld.Name(name))
-        resp     <- Ok(greeting)
+        resp <- Ok(greeting)
       } yield resp
     }
   }

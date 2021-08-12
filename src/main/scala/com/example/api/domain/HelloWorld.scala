@@ -1,4 +1,4 @@
-package com.example
+package com.example.api.domain
 
 import cats.Applicative
 import cats.implicits._
